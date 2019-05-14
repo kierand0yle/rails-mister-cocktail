@@ -1,5 +1,7 @@
 <h1><%= @cocktail.name %></h1>
 
+<p><%= link_to "Add ingredient", new_cocktail_dose_path(@cocktail), class: "btn btn-warning" %>
+
 <p><%= link_to "Edit cocktail", edit_cocktail_path(@cocktail), class: "btn btn-primary" %>
 <%= link_to "Delete", cocktail_path(@cocktail), class: "btn btn-danger", method: :delete, data: { confirm: "Are you sure?"} %>
 
