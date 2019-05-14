@@ -1,7 +1,6 @@
 class DosesController < ApplicationController
   # before_action :find_dose, only: [:show, :edit, :update, :destroy]
 
-
   def new
     @cocktail = Cocktail.find(params[:cocktail_id])
     @dose = Dose.new
