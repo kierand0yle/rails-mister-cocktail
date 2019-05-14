@@ -1,0 +1,6 @@
+<h1><%= @cocktail.name %></h1>
+
+<p><%= link_to "Edit cocktail", edit_cocktail_path(@cocktail), class: "btn btn-primary" %>
+<%= link_to "Delete", cocktail_path(@cocktail), class: "btn btn-danger", method: :delete, data: { confirm: "Are you sure?"} %>
+
+<%= link_to "Back to cocktails", cocktails_path, class: "btn btn-info" %></p>
