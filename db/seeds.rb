@@ -11,16 +11,27 @@ ingredients = JSON.parse(serialized)
 
 
 ingredients["drinks"].each do |ingredient|
-
   Ingredient.create(name: ingredient["strIngredient1"])
 end
 
 
-Cocktail.create(name: "Manhattan")
-Cocktail.create(name: "Mojito")
-Cocktail.create(name: "French 75")
-Cocktail.create(name: "White Russian")
+c1 = Cocktail.create(name: "Manhattan")
+c2 = Cocktail.create(name: "Mojito")
+c3 = Cocktail.create(name: "French 75")
+c4 = Cocktail.create(name: "White Russian")
 
+
+url = 'http://loremflickr.com/300/300/cocktail'
+
+c1.remote_photo_url = url
+c2.remote_photo_url = url
+c3.remote_photo_url = url
+c4.remote_photo_url = url
+
+c1.save
+c2.save
+c3.save
+c4.save
 
 # Ingredient.create(name: "lemon")
 # Ingredient.create(name: "ice")
