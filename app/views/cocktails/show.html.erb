@@ -12,18 +12,26 @@
 
 <%#= cl_image_tag @cocktail.photo, height: 300, width: 400, crop: :fill %>
 
-<div class="container">
+<div class="container" style= "margin-top: 0">
+  <h3>Ingredients</h3>
+  <!--
   <% @cocktail.ingredients.each do |ingredient| %>
     <p><b><%= ingredient.name %></b> </p>
     <% @cocktail.doses.each do |dose| %>
       <p><%= dose.description %> </p>
       <% end %>
+  <% end %> -->
+
+  <% @cocktail.doses.each do |dose| %>
+    <p><span><%= dose.ingredient.name %> <%= dose.description %> <%= link_to dose_path(dose), method: :delete, data: { confirm: "Delete this ingredient?" } do %>
+          <i class="fa fa-trash destroy_dose"></i>
+        <% end %></span> </p>
   <% end %>
 
   <p><%= link_to "Add ingredient", new_cocktail_dose_path(@cocktail), class: "btn btn-warning" %>
-
   <p><%= link_to "Edit cocktail", edit_cocktail_path(@cocktail), class: "btn btn-primary" %>
   <%= link_to "Delete", cocktail_path(@cocktail), class: "btn btn-danger", method: :delete, data: { confirm: "Are you sure?"} %>
+  <br>
   <br>
   <%= link_to "Back to cocktails", cocktails_path, class: "btn btn-info" %></p>
 
