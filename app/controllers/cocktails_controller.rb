@@ -5,6 +5,10 @@ class CocktailsController < ApplicationController
     @cocktails = Cocktail.all
   end
 
+  def home
+    @cocktails = Cocktail.all
+  end
+
   def show
   end
 
