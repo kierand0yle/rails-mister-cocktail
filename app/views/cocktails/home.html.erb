@@ -2,25 +2,22 @@
   <div class="container">
     <h1>The Cocktail List </h1>
     <p>Let's make some cocktails</p>
-    <a class="btn btn-primary" href='<%= link_to "Create Cocktail", new_cocktail_path %>'>Add Cocktail</a>
+    <%= link_to "Create Cocktail", new_cocktail_path, class: "btn btn-primary" %>
   </div>
 </div>
 
 <br>
 
 <div class="container">
-
-<div class="cards">
-
-  <% @cocktails.each do |cocktail| %>
-
-  <%= link_to(cocktail) do %>
-    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cloudinary_url cocktail.photo %>')">
-      <%= cocktail.name %>
-    </div>
-  <% end %>
- <% end %>
-
+  <div class="cards">
+    <% @cocktails.each do |cocktail| %>
+      <%= link_to(cocktail) do %>
+        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cloudinary_url cocktail.photo %>')">
+          <%= cocktail.name %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
 </div>
 
 
